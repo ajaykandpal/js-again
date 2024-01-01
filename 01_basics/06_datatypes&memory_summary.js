@@ -12,7 +12,7 @@ console.log(id === id2) //false
 
 // for bigint, end number by 'n'
 
-//type of all non-primitive is object (function->function object)
+//type of all non-primitive is function (though we will get object written) (function->function object)
 
 
 //++++++++++++++Memory+++++++++++++++++
