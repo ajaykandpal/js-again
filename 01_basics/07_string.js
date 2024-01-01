@@ -5,7 +5,7 @@ let age=24
 //console.log(`My name is ${name.toUpperCase()} and age is ${age}`);
 
 // can also be defined using 'new String, method (would return an object). Not used generally
-//const name1 = new String("Ajay")
+const name1 = new String("Ajay")
 console.log(typeof name1); //object with key value pair. 0:"A", 1:"j", etc
 //string has tons of methods, read them
 //__proto__ to access the object
@@ -21,4 +21,5 @@ console.log(typeof name1); //object with key value pair. 0:"A", 1:"j", etc
 //string to array based on some marker , say '-'
 let fullName = "ajay-kandpal-ak"
 console.log(fullName.split('-'));
+
 

@@ -18,7 +18,7 @@ console.log(id === id2) //false
 //++++++++++++++Memory+++++++++++++++++
 
 //Stack (Primitive), heap(non primitive)
-//stack-> we get a copy of variable, changes aremade in that copy
+//stack-> we get a copy of variable, changes are smade in that copy
 //heap-> we get address of original variable
 let name1 = "ajay" ;
 let name2 = name1 //copy of name1 given
