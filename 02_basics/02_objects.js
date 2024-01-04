@@ -1,6 +1,6 @@
 // 2 ways to declare: as literal (multiple instancs created), or constructor (singletone) Object.create
 
-//literal
+// +++++++++++++ Literal
 const mySym = Symbol("blah")
 // we can add symbols as a key in an object using square brackets []
 const user = {
@@ -34,5 +34,6 @@ user.greeting = function (){
     console.log(`Hello ${this["full name"]}`);
 }
 //diff between user.greeting() vs user.greeting
-console.log(user.greeting); //this will l simply return function reference, wont execute it
-console.log(user.greeting())
+console.log(user.greeting); //this will simply return function reference, wont execute it
+console.log(user.greeting()) //execute too, console will also print undefined as doesn't return anything
+
