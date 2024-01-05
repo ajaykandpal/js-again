@@ -43,4 +43,40 @@ const obj5 = { ...obj1, ...obj2 }
 // console.log(Object.entries(newUser)); //gives array of arrays containing key value pair in obj
 
 //check whether obj has certain property or not, otherwise can crash
-console.log(newUser.hasOwnProperty('isLoggedIn')); //true
+// console.log(newUser.hasOwnProperty('isLoggedIn')); //true
+
+
+//destructuring
+const course = {
+    courseName: "JS",
+    price: 999,
+    teacher: "hitesh"
+}
+// console.log(course.courseName) //but baar baar course. likhme ke bajae use destructuring 
+//syntax const {properties} = obj
+const {courseName, teacher} = course
+console.log(courseName,teacher);
+//can also give alternate name if too long
+const {courseName: sub} = course
+console.log(sub);
+
+//in react, while using props, instead of props.company, we prefer using destructuring
+// const navbar = ({company}) => {
+
+// }
+// navbar(company = "google")
+
+// APIs. used to talk with other programs. we get some values
+//earlier the values were in XML format, very complicated. Now in JSON format. It's like an obj
+//JSON 
+// {
+//     "name": "hitesh",
+//     "coursename": "js",
+//     "price": "free" 
+
+// }
+// https://api.github.com/users/hiteshchoudhary
+//JSON doesnt have name, though can store in some variables. Also key here is a string. Convert JSON in obj and work with it
+
+//sometimes we get API response in form of Array of objects too [{},{},{}]
+// use JSON formatter to understand API response better
