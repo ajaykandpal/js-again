@@ -14,3 +14,11 @@
 //Step1: Global execution/environment -> this keyword
 //Step2: Memory Phase
 //Step3: Execution Phase
+
+
+// +++++++++ random questions
+// const arr = [0,1,2,3]
+// arr = [6] //not allowed
+// let arr1 = [0,1,2,3]
+// arr1 = [6] // allowed
+ // same in case of objects
