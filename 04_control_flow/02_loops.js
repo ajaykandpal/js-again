@@ -15,8 +15,23 @@ const arr = [0,1,2,3]
 const greet = "Hi, I'm Ajay!"
 for (const char of greet) {    
     if(char ===' ') continue 
-    console.log(`${char} founded`);
+    // console.log(`${char} founded`);
 }
 
-// Maps Data Type in JS: its an obj holding key-value pairs. remembers insertion order ofkeys (remember, objects dont remember order of insertion)
+//forof for Map is slightly interesting. Also forin wont work on maps (wont give error though, simply wont print anything as map is not iterable)
+// Maps Data Type in JS: its an obj holding key-value pairs. Unique values. remembers insertion order of keys (remember, objects dont remember order of insertion)
 const map = new Map()
+map.set("in", "india")
+map.set("us", "united states of america")
+map.set("jp", "japan")
+// console.log(map);
+for (const key of map) {
+    console.log(key); //will  print  arrays holding [key, value]; like this , [ 'in', 'india' ]
+}
+// can destructure here only
+for (const [key, value] of map) {
+    // console.log(key, ":-> ", value);
+}
+
+//forof in object: would not work. Object not iterable using forof. see next file. forin works here
+
