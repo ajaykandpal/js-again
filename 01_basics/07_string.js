@@ -12,7 +12,7 @@ console.log(typeof name1); //object with key value pair. 0:"A", 1:"j", etc
 //console.log(name1.__proto__)
 
 //length, toUpperCase() doesnt modify originial string (stack cocncept), 
-//substring(s,l), slice() slice can take negatice values too
+//substring(s,l), slice() slice can take negative values too
 //trim() (to remove spaces and newline from start and end)
 //replace() to replace a character, usulally used to substitute for URLs, no change in original string
 // let url = "ajay%20kandpal"
@@ -20,6 +20,9 @@ console.log(typeof name1); //object with key value pair. 0:"A", 1:"j", etc
 //.includes() -> true or false
 //string to array based on some marker , say '-'
 let fullName = "ajay-kandpal-ak"
-console.log(fullName.split('-'));
+ console.log(fullName.split('-'));
+// let g= fullName.split('-') // returns an array
+// console.log(g);
+
 
 
