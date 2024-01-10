@@ -12,7 +12,7 @@ for (const key in myObj) {
     // console.log(key, ":-> ", myObj[key]);
 }
 
-// for in for array
+// for-in for array
 const arr = ['c++', 'js', 'python']
 for (const key in arr) {
     console.log(key); //0,1,2. as these are keys of array
