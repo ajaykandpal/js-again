@@ -48,7 +48,7 @@ const user = {
 const sumTwo = (num1,num2) =>  (num1 + num2); // can wrap in parantheses, still implicit return here
 // console.log(sumTwo(9,4)) //13
 // if we use curly braces, we have to type return then.
-// what if we want to implicitly return an obj? wrap it in a paranthessis
+// what if we want to implicitly return an obj? wrap it in a paranthessis. const sumTwo = (num1,num2) =>  {username: "ajay"};
 
 // IIFE (Immediately invoked function expression)
 //uses: 1. database connection. 2. to stop pollution from global scope
