@@ -39,6 +39,8 @@ const user = {
 //     return num1 + num2
 // }
 // console.log(sumTwo(3,4)) //7
+
+// +++++++++ important +++++++++ 
 // if we write arrow function without curly braces, it leads to 'implicit' return. if we have one  line statement
 // const sumTwo = (num1,num2) =>  num1 + num2 //still works
 // console.log(sumTwo(9,4)) //13
