@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // making a func to add li
+    function addLanguage( langName ) {
+        const li = document.createElement("li")
+        li.innerHTML = langName // or `${langName}`
+        document.querySelector(".language").appendChild(li)
+
+        //note: append v/s appendChild. 
+        // 1. append accepts Node objects and DOMStrings while .appendChild accepts only Node objects
+        // 2. append does not have a return value while .appendChild returns the appended Node object
+        // 3. append allows you to add multiple items while appendChild allows only a single item
+    }
+
+    addLanguage("python")
+    addLanguage("typescript")
+    // remember, using innerHTML forces it to traverse whole document
+    // implementing same in optimised way
+
+    function addOptiLang ( langName ) {
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addOptiLang("golang")
+    // prefer appendChild over innerHTML
+
+
+    // edit values, using innerHtml,outerHtml, replaceWith
+
+    let secondLang = document.querySelector("li:nth-child(2)") //2ns child
+    // secondLang.innerHTML = "mOjo" //DONT USE
+    const newLi = document.createElement("li")
+    newLi.textContent = "MoJo1"
+    secondLang.replaceWith(newLi)
+
+    let firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = "<li> TypeScript </li>"
+
+    // remove
+
+    let lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+  
+
+</script>
+</html>

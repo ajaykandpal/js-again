@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <div class="parent">
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+        <div class="day">Sun</div>
+    </div>
+</body>
+<script>
+
+   const parent =  document.querySelector('.parent')
+//    console.log(parent);
+   
+   //.children property -> would return HTMLCollection of children
+//    console.log(parent.children);
+//    console.log(parent.children[1].innerHTML);
+
+    // for (let i = 0; i < parent.children.length; i++) {
+    // console.log(parent.children[i].innerHTML)
+    // }
+
+    // .firstElementChild, last -> returns first child
+
+    // we can also move from child to parent
+    // Note: DOM OPERATIONS ARE EXPENSIVE (Have to traverse the tree). so always try to minimize them
+     const dayOne= document.querySelector(".day")  //mon wali div
+        // console.log(dayOne.parentElement)
+        // console.log(dayOne.nextElementSibling) //tue
+
+     console.log("Nodes: ", parent.childNodes);  // 15 nodes. why? every enter, every new line, even every comment is a new node
+     // imp if want to do open source in react
+      
+</script>
+</html>
