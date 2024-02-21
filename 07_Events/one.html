@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // all events in js are run sequentially (some exceptions)
+    // evenst happens when some activity is done 
+
+    //dont inject event handlers in HTML, not feasable when applications scale. But can do in React.
+
+      // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // } the limitation in this approach is we dont have event listener here, so no propagation property. less features
+
+    //other approaches:
+    // attachEvent() // used in internet explorer days
+    // jQuery framework -> on
+
+    //best approach rn
+     document.getElementById('owl').addEventListener('click', function(e){
+        console.log("owl clicked");
+        e.stopPropagation() // to stop propogation
+    }, false) //this true/false is for event propogation, by default false = bubbling out.
+
+    // we get event obj here, read abt it in detail.
+    // read these:
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY (can be used to craete animation/shape around the place where clicked)
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // event propogation: 2 types: bubbling out and capturing in (watch namate js wali video)
+     // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // stop default
+     // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+    // ques: if we click on image, it should hide/remove
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            // removeIt.parentNode.removeChild(removeIt); //old way
+        }
+    
+        
+    })
+    
+</script>
+</html>
