@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Ajay aur JS</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    //setInterval's handler/callback can take input params too
+    let interval;
+    const message = function (str) {
+      console.log(str, Date.now().toLocaleString());
+    };
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(interval);
+      console.log("stopped");
+    });
+    document.querySelector("#start").addEventListener("click", function () {
+      console.log("started");
+      interval = setInterval(message, 1000, "hi");
+    });
+  </script>
+</html>
