@@ -34,4 +34,5 @@ for (const [key, value] of map) {
 }
 
 //forof in object: would not work. Object not iterable using forof. see next file. forin works here
+//though we have a workaround using Object.entries(obj)
 

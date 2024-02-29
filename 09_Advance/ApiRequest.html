@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+<div id="user"></div>
+</body>
+<script>
+    let showDiv = document.getElementById("user");
+    let data;
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest(); //creates an obj to send and recieve data
+    xhr.open('GET', requestUrl) // takes method, and string. now need to call open by .send()
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            data = JSON.parse(this.responseText)
+            console.log(typeof data);
+            console.log(data);
+            setTimeout(showUser, 2000);
+        }
+    } // monitors continuously. readyState only mentions once
+    xhr.send();
+    function showUser(){
+        let butt = document.createElement("BUTTON"); //make it gobal to change it sinner text when clicked
+            butt.innerHTML = "Show user details";
+            butt.addEventListener('click', userDetails);
+            showDiv.appendChild(butt);
+    }
+    function userDetails(){
+        let img = document.createElement("IMG");
+        let follower =  document.createElement("div");
+        follower.innerHTML = `Follower Count: ${data.followers}`;
+        img.setAttribute('src',data.avatar_url);
+        showDiv.appendChild(img);
+        showDiv.appendChild(follower);
+        showDiv.firstChild.innerHTML ="Hide user Details"
+
+        // change click function too
+    }
+
+
+
+// initially XMLHttpRequest was used for API requests(AJAX programming)
+// it has state for everything:
+// 0,1,2,3,4 (unsent [client created], opened [open() has been called], headers_received[send() has been called],
+// laoding[responseText has partial data], done)
+
+// console is not part of JS, same as document.get...
+//all these are provided by browsers, part of browser APIs
+// all these are injected by JS runtime
+
+</script>
+</html>
