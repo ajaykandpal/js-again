@@ -1,3 +1,5 @@
+// static stops access of property/method to Objects or derived classes.
+
 class User {
     constructor(username){
         this.username = username
